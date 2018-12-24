@@ -1,10 +1,8 @@
 Ordner:
-php/ PHP-Dateien, die nur Code (Funktionen, Klassen) enthalten, keinen html-Code.
-script/ Javascript-Dateien
-style/ CSS-Dateien
+include.php/ PHP-Dateien, die nur Code (Funktionen, Klassen) enthalten, keinen html-Code.
+js/ Javascript-Dateien
+css/ CSS-Dateien
 install/ install.php und andere Dateien um die Datenbank auf dem Server zu installieren
 
 Dateien im Hauptverzeichnis:
-Seiten die man anzeigen kann, zb. index.php, chat.php, etc.
-
-Gute Idee?
+Seiten die man anzeigen kann, zb. index.php, login.php, chat.php, etc.
