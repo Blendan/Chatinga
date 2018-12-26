@@ -76,25 +76,17 @@ CREATE TABLE Chatraumverzeichnis (
 
 INSERT INTO `chatraumverzeichnis` (`Name`, `Thema`) VALUES ('General', 'Raum für Alles was das Herz begehrt.'), ('Ü20', 'Nur (halbwegs) Erwachsene erlaubt!');
 
-CREATE TABLE General (
+CREATE TABLE Nachricht (
 	NachrichtID INT NOT NULL AUTO_INCREMENT,
 	Verfasser INT NOT NULL,
 	Nachricht VARCHAR(2000) NOT NULL,
 	Zeitpunkt TIMESTAMP NOT NULL,
+  Chat INT(6) NOT NULL,
 
-    CONSTRAINT General_PK PRIMARY KEY (NachrichtID),
-	CONSTRAINT General_Verfasser_FK FOREIGN KEY (Verfasser)
-		REFERENCES Nutzer(NutzerID) ON DELETE RESTRICT
+    CONSTRAINT Nachricht_PK PRIMARY KEY (NachrichtID),
+	CONSTRAINT Nachricht_Verfasser_FK FOREIGN KEY (Verfasser)
+		REFERENCES Nutzer(NutzerID) ON DELETE RESTRICT,
+  CONSTRAINT Nachricht_Chat_FK FOREIGN KEY (Chat)
+		REFERENCES Chatraumverzeichnis(ChatraumID) ON DELETE RESTRICT
 		-- Ein Nutzer der einmal eine Nachricht geschrieben, oder einen Raum angelegt hat, kann nicht mehr aus der Datenbank gelöscht werden.
-);
-
-CREATE TABLE Ü20 (
-	NachrichtID INT NOT NULL AUTO_INCREMENT,
-	Verfasser INT NOT NULL,
-	Nachricht VARCHAR(2000) NOT NULL,
-	Zeitpunkt TIMESTAMP NOT NULL,
-
-    CONSTRAINT Ü20_PK PRIMARY KEY (NachrichtID),
-	CONSTRAINT Ü20_Verfasser_FK FOREIGN KEY (Verfasser)
-		REFERENCES Nutzer(NutzerID) ON DELETE RESTRICT
 );
