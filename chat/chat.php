@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php include "../include.php/post.php";  ?>
+<?php include "post.php";  ?>
 
 <?php
   $post = array();

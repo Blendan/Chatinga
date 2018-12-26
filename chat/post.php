@@ -19,16 +19,16 @@
       $server ="mysql:dbname=chatinga;host=localhost";
       $user="root";
       $password = "";
-      $options = array(POD::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
+      $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
       $pdo = new PDO($server,$user,$password,$options);
 
       $newMesage = array();
-      $newMesage["Verfasser"] = getVerfasser();
-      $newMesage["Nachricht"] = getNachricht();
-      $newMesage["Zeitpunkt"] = getZeitpunkt();
+      $newMesage["Verfasser"] = $this->Verfasser;
+      $newMesage["Nachricht"] = $this->Nachricht;
+      $newMesage["Zeitpunkt"] = $this->Zeitpunkt;
       $newMesage["Chat"] = $this->Chat;
 
-      $stadement = $pdo->prepare("INSERT INTO nachricht(Verfasser,Nachricht,Zeitpunkt,Chat) VLAUES (:Verfasser,:Nachricht,:Zeitpunkt,:Chat)");
+      $stadement = $pdo->prepare("INSERT INTO `nachricht` ('Verfasser','Nachricht','Zeitpunkt','Chat') VLAUES (:Verfasser,:Nachricht,:Zeitpunkt,:Chat)");
 
       try
       {
@@ -49,7 +49,7 @@
 
     public function getVerfasser()
     {
-      return $this->user;
+      return $this->Verfasser;
     }
 
     public function getZeitpunkt()

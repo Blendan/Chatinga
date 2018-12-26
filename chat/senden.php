@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php include "../include.php/post.php";  ?>
+<?php include "post.php";  ?>
 
 <?php
   if (isset($_POST["Nachricht"])&&isset($_POST["chatid"]))
@@ -11,6 +11,8 @@
     $row["Chat"] = $_POST["chatid"];
 
     $nachricht = new Post($row);
+
+    $nachricht->addMesage();
   }
   else
   {
@@ -22,7 +24,7 @@
 
 
    <script type="text/javascript">
-     document.location.href = "postline.php&chatid=<?php echo $_POST["chatid"]; ?>";
+     document.location.href = "postline.php?chatid=<?php echo $_POST["chatid"]; ?>";
    </script>
 
  <?php else: ?>
