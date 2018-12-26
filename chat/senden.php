@@ -6,13 +6,15 @@
   {
     $row = array();
     $row["Nachricht"] = $_POST["Nachricht"];
-    $row["Verfasser"]  = 1;
-    $row["Zeitpunkt"] = date("Y-m-d H:i:s");
+    $row["Verfasser"]  = 2;
+    $row["Zeitpunkt"] = date("Y-m-d H:i");
     $row["Chat"] = $_POST["chatid"];
 
     $nachricht = new Post($row);
 
-    $nachricht->addMesage();
+    echo $nachricht->addMesage();
+
+    //print_r($row);
   }
   else
   {
@@ -24,7 +26,7 @@
 
 
    <script type="text/javascript">
-     document.location.href = "postline.php?chatid=<?php echo $_POST["chatid"]; ?>";
+    document.location.href = "postline.php?chatid=<?php echo $_POST["chatid"]; ?>";
    </script>
 
  <?php else: ?>
