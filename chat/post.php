@@ -36,13 +36,13 @@
       }
       catch (PDOException $e)
       {
-        die("Insert ERROR:".$e->getMesage());
+        die("Insert ERROR:".$e->getNachricht());
       }
 
 
     }
 
-    public function getMesage()
+    public function getNachricht()
     {
       return $this->Nachricht;
     }
