@@ -5,9 +5,9 @@
     <title></title>
   </head>
   <body>
-    <form action="senden.php?chatid=1" method="post">
-      <textarea name="Post"></textarea>
-      <button type="submit" name="button">Senden</button>
+    <form action="senden.php" method="post">
+      <textarea name="Nachricht"></textarea>
+      <button type="submit" name="chatid" value="<?php echo $_GET["chatid"]; ?>">Senden</button>
     </form>
   </body>
 </html>

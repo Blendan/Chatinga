@@ -8,8 +8,8 @@
       <title></title>
     </head>
     <body>
-      <iframe src="chat/chat.php?<?php echo $_GET["chatid"]; ?>" width="300px" height="300px"></iframe>
-      <iframe src="chat/postline.php?<?php echo $_GET["chatid"]; ?>" width="300px" height="300px"></iframe>
+      <iframe src="chat/chat.php?chatid=<?php echo $_GET["chatid"]; ?>" width="300px" height="300px"></iframe>
+      <iframe src="chat/postline.php?chatid=<?php echo $_GET["chatid"]; ?>" width="300px" height="300px"></iframe>
     </body>
   </html>
 <?php else: ?>

@@ -1,23 +1,60 @@
 <?php
   class Post
   {
-    private $mesage = "ERROR: 404! Mesage not Found";
-    private $user = "ERROR: 404! User not Found";
+    private $Nachricht = "ERROR: 404! Mesage not Found";
+    private $Verfasser = "ERROR: 404! User not Found";
+    private $Zeitpunkt = "ERROR: 404! Timestamp not Found";
+    private $Chat = "ERROR: 404! Chat not Found";
 
     function __construct($row)
     {
-      $this->mesage = $row["mesage"];
-      $this->user = $row["user"];
+      $this->Nachricht = $row["Nachricht"];
+      $this->Verfasser = $row["Verfasser"];
+      $this->Zeitpunkt = $row["Zeitpunkt"];
+      $this->Chat = $row["Chat"];
+    }
+
+    public function addMesage()
+    {
+      $server ="mysql:dbname=chatinga;host=localhost";
+      $user="root";
+      $password = "";
+      $options = array(POD::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
+      $pdo = new PDO($server,$user,$password,$options);
+
+      $newMesage = array();
+      $newMesage["Verfasser"] = getVerfasser();
+      $newMesage["Nachricht"] = getNachricht();
+      $newMesage["Zeitpunkt"] = getZeitpunkt();
+      $newMesage["Chat"] = $this->Chat;
+
+      $stadement = $pdo->prepare("INSERT INTO nachricht(Verfasser,Nachricht,Zeitpunkt,Chat) VLAUES (:Verfasser,:Nachricht,:Zeitpunkt,:Chat)");
+
+      try
+      {
+        $stadement->execute($newMesage);
+      }
+      catch (PDOException $e)
+      {
+        die("Insert ERROR:".$e->getMesage());
+      }
+
+
     }
 
     public function getMesage()
     {
-      return $this->mesage;
+      return $this->Nachricht;
     }
 
-    public function getUser()
+    public function getVerfasser()
     {
       return $this->user;
+    }
+
+    public function getZeitpunkt()
+    {
+      return $this->Zeitpunkt;
     }
   }
  ?>

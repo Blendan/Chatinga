@@ -2,8 +2,28 @@
 <?php include "../include.php/post.php";  ?>
 
 <?php
-  $row = array('mesage' => "Test", 'user' => "hallo");
-  $post[0] = new Post($row);
+  $post = array();
+
+  $server ="mysql:dbname=chatinga;host=localhost";
+  $user="root";
+  $password = "";
+  $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
+  $pdo = new PDO($server,$user,$password,$options);
+
+  $i = 0;
+  try
+  {
+    $rows = $pdo->query("SELECT * FROM nachricht WHERE Chat = ".$_GET["chatid"]);
+
+    foreach ($rows as $key => $row)
+    {
+      $post[$i]  = new Post($row);
+    }
+  }
+  catch (\Exception $e)
+  {
+    die("Insert ERROR:".$e->getMesage());
+  }
 ?>
 
 <!DOCTYPE html>
@@ -18,10 +38,10 @@
       {
         echo "<div class='post'>";
         echo "<p class='user'>";
-        echo $value->getUser();
+        echo $value->getVerfasser();
         echo "</p>";
         echo "<p class='mesage'>";
-        echo $value->getMesage();
+        echo $value->getNachricht();
         echo "</p>";
         echo "</div>";
       }

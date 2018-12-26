@@ -1,9 +1,16 @@
 <?php session_start(); ?>
+<?php include "../include.php/post.php";  ?>
 
 <?php
-  if (isset($_POST["Post"])&&isset($_GET["chatid"]))
+  if (isset($_POST["Nachricht"])&&isset($_POST["chatid"]))
   {
+    $row = array();
+    $row["Nachricht"] = $_POST["Nachricht"];
+    $row["Verfasser"]  = 1;
+    $row["Zeitpunkt"] = date("Y-m-d H:i:s");
+    $row["Chat"] = $_POST["chatid"];
 
+    $nachricht = new Post($row);
   }
   else
   {
@@ -11,10 +18,11 @@
   }
  ?>
 
- <?php if (isset($_POST["Post"])&&isset($_GET["chatid"])): ?>
+ <?php if (isset($_POST["Nachricht"])&&isset($_POST["chatid"])): ?>
+
 
    <script type="text/javascript">
-     document.location.href = "postline.php&chatid=<?php echo $_GET["chatid"]; ?>";
+     document.location.href = "postline.php&chatid=<?php echo $_POST["chatid"]; ?>";
    </script>
 
  <?php else: ?>
