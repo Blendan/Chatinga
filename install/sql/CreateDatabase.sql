@@ -61,32 +61,32 @@ FOR EACH ROW
 UPDATE Nutzer SET Nutzer.gewaehltesThema = 1
 WHERE Nutzer.gewaehltesThema IS NULL;
 
-CREATE TABLE Chatraumverzeichnis (
+CREATE TABLE Chatraum (
 	ChatraumID INT NOT NULL AUTO_INCREMENT,
 	Ersteller INT NULL, -- NULL für Standardräume
 	Name VARCHAR(20) NOT NULL,
 	Thema VARCHAR(100) NOT NULL,
 
-	CONSTRAINT Chatraumverzeichnis_PK PRIMARY KEY (ChatraumID),
-	CONSTRAINT Chatraumverzeichnis_Ersteller_FK FOREIGN KEY (Ersteller)
+	CONSTRAINT Chatraum_PK PRIMARY KEY (ChatraumID),
+	CONSTRAINT Chatraum_Ersteller_FK FOREIGN KEY (Ersteller)
 		REFERENCES Nutzer(NutzerID) ON DELETE RESTRICT,
-	CONSTRAINT Chatraumverzeichnis_Name_UNQ UNIQUE (Name)
+		-- Ein Nutzer der einmal einen Raum angelegt hat, kann nicht mehr aus der Datenbank gelöscht werden.
+	CONSTRAINT Chatraum_Name_UNQ UNIQUE (Name)
 );
--- Alle anzulegenden Chaträume müssen hier reingeschrieben werden. Anschließend werden Tabellen angelegt mit dem selben Namen wie hier verzeichnet.
 
-INSERT INTO `chatraumverzeichnis` (`Name`, `Thema`) VALUES ('General', 'Raum für Alles was das Herz begehrt.'), ('Ü20', 'Nur (halbwegs) Erwachsene erlaubt!');
+INSERT INTO `chatraum` (`Name`, `Thema`) VALUES ('General', 'Raum für Alles was das Herz begehrt.'), ('Ü20', 'Nur (halbwegs) Erwachsene erlaubt!');
 
 CREATE TABLE Nachricht (
 	NachrichtID INT NOT NULL AUTO_INCREMENT,
 	Verfasser INT NOT NULL,
 	Nachricht VARCHAR(2000) NOT NULL,
 	Zeitpunkt TIMESTAMP NOT NULL,
-  Chat INT(6) NOT NULL,
+	Chatraum INT(6) NOT NULL,
 
     CONSTRAINT Nachricht_PK PRIMARY KEY (NachrichtID),
 	CONSTRAINT Nachricht_Verfasser_FK FOREIGN KEY (Verfasser)
 		REFERENCES Nutzer(NutzerID) ON DELETE RESTRICT,
-  CONSTRAINT Nachricht_Chat_FK FOREIGN KEY (Chat)
-		REFERENCES Chatraumverzeichnis(ChatraumID) ON DELETE RESTRICT
-		-- Ein Nutzer der einmal eine Nachricht geschrieben, oder einen Raum angelegt hat, kann nicht mehr aus der Datenbank gelöscht werden.
+	CONSTRAINT Nachricht_Chatraum_FK FOREIGN KEY (Chatraum)
+		REFERENCES Chatraum(ChatraumID) ON DELETE RESTRICT
+		-- Ein Nutzer der einmal eine Nachricht geschrieben hat, kann nicht mehr aus der Datenbank gelöscht werden.
 );
