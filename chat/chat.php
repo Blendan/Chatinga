@@ -16,7 +16,7 @@
 
     try
     {
-      $rows = $pdo->query("SELECT * FROM nachricht WHERE Chat = ".$_GET["chatid"]);
+      $rows = $pdo->query("SELECT * FROM nachricht WHERE Chatraum = ".$_GET["chatid"]);
 
       foreach ($rows as $key => $row)
       {

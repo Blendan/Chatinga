@@ -5,7 +5,7 @@
     private $NachrichtID = "ERROR: 404! MesageID not Found";
     private $Verfasser = "ERROR: 404! User not Found";
     private $Zeitpunkt = "ERROR: 404! Timestamp not Found";
-    private $Chat = "ERROR: 404! Chat not Found";
+    private $Chatraum = "ERROR: 404! Chatraum not Found";
 
     function __construct($row)
     {
@@ -16,7 +16,7 @@
       $this->Nachricht = $row["Nachricht"];
       $this->Verfasser = $row["Verfasser"];
       $this->Zeitpunkt = $row["Zeitpunkt"];
-      $this->Chat = $row["Chat"];
+      $this->Chatraum = $row["Chatraum"];
     }
 
     public function addMesage()
@@ -31,9 +31,9 @@
       $newMesage["Verfasser"] = $this->Verfasser;
       $newMesage["Nachricht"] = $this->Nachricht;
       $newMesage["Zeitpunkt"] = $this->Zeitpunkt;
-      $newMesage["Chat"] = $this->Chat;
+      $newMesage["Chatraum"] = $this->Chatraum;
 
-      $stadement = $pdo->prepare("INSERT INTO `nachricht` (`NachrichtID`, `Verfasser`, `Nachricht`, `Zeitpunkt`, `Chat`) VALUES (NULL,:Verfasser,:Nachricht,:Zeitpunkt,:Chat)");
+      $stadement = $pdo->prepare("INSERT INTO `nachricht` (`NachrichtID`, `Verfasser`, `Nachricht`, `Zeitpunkt`, `Chatraum`) VALUES (NULL,:Verfasser,:Nachricht,:Zeitpunkt,:Chatraum)");
 
       try
       {

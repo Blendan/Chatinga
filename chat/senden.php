@@ -8,7 +8,7 @@
     $row["Nachricht"] = $_POST["Nachricht"];
     $row["Verfasser"]  = 2;
     $row["Zeitpunkt"] = date("Y-m-d H:i");
-    $row["Chat"] = $_POST["chatid"];
+    $row["Chatraum"] = $_POST["chatid"];
 
     $nachricht = new Post($row);
 
