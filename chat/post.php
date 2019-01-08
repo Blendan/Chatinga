@@ -83,7 +83,8 @@
 
     public function getZeitpunkt()
     {
-      return $this->Zeitpunkt;
+      $date=date_create("$this->Zeitpunkt");
+      return date_format($date,"H:i");
     }
   }
  ?>

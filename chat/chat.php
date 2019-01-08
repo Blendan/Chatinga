@@ -12,8 +12,6 @@
   {
     $post = array();
 
-
-
     try
     {
       $rows = $pdo->query("SELECT * FROM nachricht WHERE Chatraum = ".$_GET["chatid"]);
@@ -50,9 +48,21 @@
     <?php
       foreach (auslesen($pdo) as $key => $value)
       {
-        echo "<div class='post'>";
+        // überprüft ob der Post vom angemeldeten nutzer kommt oder nicht und weist passende klasse für CSS zu
+        if($value->getVerfasser()==$_SESSION["NutzerID"])
+        {
+          echo "<div class='post own'>";
+        }
+        else
+        {
+          echo "<div class='post other'>";
+        }
+        // gibt die eingentliche Nachricht aus
         echo "<p class='user'>";
         echo $value->getVerfasserName();
+        echo "</p>";
+        echo "<p class='timestamp'>";
+        echo $value->getZeitpunkt();
         echo "</p>";
         echo "<p class='mesage'>";
         echo $value->getNachricht();

@@ -6,7 +6,7 @@
   {
     $row = array();
     $row["Nachricht"] = $_POST["Nachricht"];
-    $row["Verfasser"]  = 2;
+    $row["Verfasser"]  = $_SESSION["NutzerID"];
     $row["Zeitpunkt"] = date("Y-m-d H:i");
     $row["Chatraum"] = $_POST["chatid"];
 
