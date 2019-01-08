@@ -32,9 +32,9 @@ if(isset($_POST['login']))	//Seite wurde vom login-formular aufgerufen
 			$dbUser = retrieveUser($_POST["username"], $pdo);
 			$_SESSION["Nutzername"] = $dbUser["Nutzername"];
 			$_SESSION["gewaehltesThema"] = $dbUser["gewaehltesThema"];
-			$_SESSION["NutzerId"] = $dbUser["NutzerId"];
+			$_SESSION["NutzerID"] = $dbUser["NutzerID"];
 
-			setOnline($_SESSION["username"], $pdo);
+			setOnline($_SESSION["Nutzername"], $pdo);
 
 			header("Refresh:2; url=chatauswahl.php");
 			echo "Login erfolgreich! Du wirst gleich weitergeleitet.";
