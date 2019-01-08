@@ -32,6 +32,7 @@ if(isset($_POST['login']))	//Seite wurde vom login-formular aufgerufen
 			$dbUser = retrieveUser($_POST["username"], $pdo);
 			$_SESSION["Nutzername"] = $dbUser["Nutzername"];
 			$_SESSION["gewaehltesThema"] = $dbUser["gewaehltesThema"];
+			$_SESSION["NutzerId"] = $dbUser["NutzerId"];
 
 			setOnline($_SESSION["username"], $pdo);
 
