@@ -11,7 +11,7 @@ session_start();
 <?php
 if(isset($_SESSION["Nutzername"]))
 {
-	echo "Du bist angemeldet als " . $_SESSION["Nutzername"] . ".<br>";
+	echo "Du bist angemeldet als " . $_SESSION["Nutzername"] . "<br>";
 	echo "<a href='logoutScript.php'>Ausloggen</a><br>";
 }
 ?>
@@ -20,6 +20,7 @@ if(isset($_SESSION["Nutzername"]))
 			<legend>Einloggen</legend>
 			Benutzername: <input type="text" name="username">
 			Passwort: <input type="password" name="password">
+			<label><input name="keepLoggedIn" type="checkbox">Angemeldet bleiben</label>
 			<button name='login' value='1' type="submit">Einloggen</button>
 		</fieldset>
 	</form>

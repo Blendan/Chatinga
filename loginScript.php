@@ -1,4 +1,13 @@
 <?php
+/* Genutzte Resourcen:
+ * Session-Lifetime, erster User-Beitrag: http://php.net/manual/de/function.session-set-cookie-params.php
+ */
+if(isset($_POST["keepLoggedIn"]))
+{
+	//Setze die Lebensdauer des Session Cookies auf 30 Tage
+	$cookieLifetime = 30 * 86400;
+}
+
 session_start();
 include "include.php\loginFunctions.inc.php";
 ?>
@@ -26,13 +35,19 @@ if(isset($_POST['login']))	//Seite wurde vom login-formular aufgerufen
 			if(isset($_SESSION["Nutzername"]))
 			{
 				setOffline($_SESSION["Nutzername"], $pdo);
+				session_unset();
 			}
 
 			//Session Variable füllen
 			$dbUser = retrieveUser($_POST["username"], $pdo);
+
 			$_SESSION["Nutzername"] = $dbUser["Nutzername"];
 			$_SESSION["gewaehltesThema"] = $dbUser["gewaehltesThema"];
 			$_SESSION["NutzerID"] = $dbUser["NutzerID"];
+			if(isset($_POST["keepLoggedIn"]))
+			{
+				setcookie(session_name(),session_id(),time()+$cookieLifetime);
+			}
 
 			setOnline($_SESSION["Nutzername"], $pdo);
 
