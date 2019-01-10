@@ -11,8 +11,7 @@ session_start();
 <?php
 if(isset($_SESSION["Nutzername"]))
 {
-	echo "Du bist angemeldet als " . $_SESSION["Nutzername"] . "<br>";
-	echo "<a href='logoutScript.php'>Ausloggen</a><br>";
+	header("Location: index.php");
 }
 ?>
 	<form id="loginForm" action="loginScript.php" method="post">
