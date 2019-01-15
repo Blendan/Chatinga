@@ -65,11 +65,11 @@
 
         if($last->getVerfasser()==$_SESSION["NutzerID"])
         {
-          echo "<div class='post own'>";
+          echo "<div class='postOwn'>";
         }
         else
         {
-          echo "<div class='post other'>";
+          echo "<div class='postOther'>";
         }
         // gibt die eingentliche Nachricht aus
         echo "<p class='user'>";
@@ -78,7 +78,7 @@
         echo "<p class='timestamp'>";
         echo $last->getZeitpunkt();
         echo "</p>";
-        echo "<p class='mesage'>";
+        echo "<p class='message'>";
         echo $last->getNachricht();
         echo "</p>";
         echo "</div>";

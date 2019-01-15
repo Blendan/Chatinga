@@ -35,11 +35,12 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+	<link rel="stylesheet" type="text/css" href="../css/chat.css">
     <script src="../js/jquery.js"></script>
 
   </head>
   <body>
-    <div id="mesages">
+    <div id="messages">
 
       <?php
         foreach (auslesen($pdo) as $key => $value)
@@ -47,11 +48,11 @@
           // überprüft ob der Post vom angemeldeten nutzer kommt oder nicht und weist passende klasse für CSS zu
           if($value->getVerfasser()==$_SESSION["NutzerID"])
           {
-            echo "<div class='post own'>";
+            echo "<div class='postOwn'>";
           }
           else
           {
-            echo "<div class='post other'>";
+            echo "<div class='postOther'>";
           }
           // gibt die eingentliche Nachricht aus
           echo "<p class='user'>";
@@ -60,7 +61,7 @@
           echo "<p class='timestamp'>";
           echo $value->getZeitpunkt();
           echo "</p>";
-          echo "<p class='mesage'>";
+          echo "<p class='message'>";
           echo $value->getNachricht();
           echo "</p>";
           echo "</div>";
@@ -85,7 +86,7 @@
        {
          if(document.getElementById('scannForNew').contentWindow.getID()!=last)
          {
-           $("#mesages").append(document.getElementById('scannForNew').contentWindow.getMesage());
+           $("#messages").append(document.getElementById('scannForNew').contentWindow.getMesage());
            last = document.getElementById('scannForNew').contentWindow.getID();
          }
        }
