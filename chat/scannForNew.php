@@ -39,66 +39,47 @@
     <script language="javascript" type="text/javascript">
       location.href = "#scroolTo";
 
-      window.setTimeout('window.location = "scannForNew.php?chatid=<?php echo $_GET["chatid"]; ?>"',1000);
-
-      function getID()
+      function getMessages()
       {
-        if(document.getElementById("lastMesageId").innerHTML!=null)
-        {
-          return document.getElementById("lastMesageId").innerHTML;
-        }
-      }
-
-      function getMesage()
-      {
-        return document.getElementById("lastMesage").innerHTML;
+        window.location = "scannForNew.php?chatid=<?php echo $_GET["chatid"]; ?>&last=<?php echo $_GET["last"]; ?>";
+        return document.getElementById("lastMessages").innerHTML;
       }
     </script>
   </head>
   <body>
 
-    <div id="lastMesage">
+    <div id="lastMessages">
       <?php
+        $Parsedown = new Parsedown(); //für Markdown
+        $Parsedown->setSafeMode(true); //damit werden HTML-Tags automatisch umgewandelt
+
         foreach (auslesen($pdo) as $key => $value)
         {
-          // überprüft ob der Post vom angemeldeten nutzer kommt oder nicht und weist passende klasse für CSS zu
+          if($value->getNachrichtID()>$_GET["last"])
+          {
+            // gibt die eingentliche Nachricht aus
+            if($value->getVerfasser()==$_SESSION["NutzerID"]) // überprüft ob der Post vom angemeldeten nutzer kommt oder nicht und weist passende klasse für CSS zu
+            {
+              echo "<div class='postOwn'>";
+            }
+            else
+            {
+              echo "<div class='postOther'>";
+            }
 
-
-          $last = $value;
+            echo "<p class='user'>";
+            echo $value->getVerfasserName();
+            echo "</p>";
+            echo "<p class='timestamp'>";
+            echo $value->getZeitpunkt();
+            echo "</p>";
+            echo "<p class='message'>";
+            echo $Parsedown->text($value->getNachricht());
+            echo "</p>";
+            echo "</div>";
+          }
         }
-
-        if($last->getVerfasser()==$_SESSION["NutzerID"])
-        {
-          echo "<div class='postOwn'>";
-        }
-        else
-        {
-          echo "<div class='postOther'>";
-        }
-        // gibt die eingentliche Nachricht aus
-        $Parsedown = new Parsedown(); //für Markdown
-        $Parsedown->setSafeMode(true); //save mode??
-
-        // gibt die eingentliche Nachricht aus
-        echo "<p class='user'>";
-        echo $value->getVerfasserName();
-        echo "</p>";
-        echo "<p class='timestamp'>";
-        echo $value->getZeitpunkt();
-        echo "</p>";
-        echo "<p class='message'>";
-        //$temp = str_replace(">","&gt;",str_replace("<","&lt;",$value->getNachricht())); // um html tags vom user zu verhindern
-        echo $Parsedown->text($value->getNachricht());
-        echo "</p>";
-        echo "</div>";
-
        ?>
      </div>
-
-    <div id="lastMesageId"><?php echo $last->getNachrichtID(); ?></div>
-
-
-
-
   </body>
 </html>

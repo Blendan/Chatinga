@@ -44,6 +44,8 @@
     <div id="messages">
 
       <?php
+        $Parsedown = new Parsedown(); //für Markdown
+        $Parsedown->setSafeMode(true); //damit werden HTML-Tags automatisch umgewandelt
         foreach (auslesen($pdo) as $key => $value)
         {
           // überprüft ob der Post vom angemeldeten nutzer kommt oder nicht und weist passende klasse für CSS zu
@@ -55,8 +57,6 @@
           {
             echo "<div class='postOther'>";
           }
-          $Parsedown = new Parsedown(); //für Markdown
-          $Parsedown->setSafeMode(true);
 
           // gibt die eingentliche Nachricht aus
           echo "<p class='user'>";
@@ -66,7 +66,6 @@
           echo $value->getZeitpunkt();
           echo "</p>";
           echo "<p class='message'>";
-          //$temp = str_replace(">","&gt;",str_replace("<","&lt;",$value->getNachricht())); // um html tags vom user zu verhindern
           echo $Parsedown->text($value->getNachricht());
           echo "</p>";
           echo "</div>";
@@ -74,26 +73,21 @@
           $last = $value->getNachrichtID();
         }
        ?>
+       <div id="newMessages"></div>
 
     </div>
 
      <div id="scroolTo"></div>
 
-     <iframe id="scannForNew" src="scannForNew.php?chatid=<?php echo $_GET["chatid"]; ?>" style="display: none;"></iframe>
+     <iframe id="scannForNew" src="scannForNew.php?chatid=<?php echo $_GET["chatid"]; ?>&last=<?php echo $last ?>" style="display: none;"></iframe>
      <script language="javascript" type="text/javascript">
        location.href = "#scroolTo";
 
-       var last = <?php echo $last ?>+"";
+       window.setInterval('addNew();',1000);
 
-       window.setInterval('checkForNew();',1000);
-
-       function checkForNew()
+       function addNew()
        {
-         if(document.getElementById('scannForNew').contentWindow.getID()!=last)
-         {
-           $("#messages").append(document.getElementById('scannForNew').contentWindow.getMesage());
-           last = document.getElementById('scannForNew').contentWindow.getID();
-         }
+           document.getElementById("newMessages").innerHTML= document.getElementById('scannForNew').contentWindow.getMessages();
        }
      </script>
   </body>
