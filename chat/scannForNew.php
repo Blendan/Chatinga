@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php include "post.php";  ?>
+<?php include "../include.php/parsedown-1.7.1/Parsedown.php" ?>
 
 <?php
   $server ="mysql:dbname=chatinga;host=localhost";
@@ -42,7 +43,10 @@
 
       function getID()
       {
-        return document.getElementById("lastMesageId").innerHTML;
+        if(document.getElementById("lastMesageId").innerHTML!=null)
+        {
+          return document.getElementById("lastMesageId").innerHTML;
+        }
       }
 
       function getMesage()
@@ -72,14 +76,19 @@
           echo "<div class='postOther'>";
         }
         // gibt die eingentliche Nachricht aus
+        $Parsedown = new Parsedown(); //für Markdown
+        $Parsedown->setSafeMode(true); //save mode??
+
+        // gibt die eingentliche Nachricht aus
         echo "<p class='user'>";
-        echo $last->getVerfasserName();
+        echo $value->getVerfasserName();
         echo "</p>";
         echo "<p class='timestamp'>";
-        echo $last->getZeitpunkt();
+        echo $value->getZeitpunkt();
         echo "</p>";
         echo "<p class='message'>";
-        echo $last->getNachricht();
+        //$temp = str_replace(">","&gt;",str_replace("<","&lt;",$value->getNachricht())); // um html tags vom user zu verhindern
+        echo $Parsedown->text($value->getNachricht());
         echo "</p>";
         echo "</div>";
 
