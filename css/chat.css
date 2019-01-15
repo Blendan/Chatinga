@@ -1,0 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+body{
+background-color:white;
+	font-family: "Roboto", sans-serif;
+	text-align:left;
+	font-size: 16px;
+	}
+	
+.user{
+	color:green;
+	
+
+}
+
+.timestamp {
+	color:grey;
+	font-size: 9px;
+	text-align:left;
+}
+
+.message {
+
+	font-size:16px;
+	font-family: "Roboto", sans-serif;
+	color: black;
+}
+
+
+.postOwn{
+
+  left: 83%;
+	position: relative;
+	background: #E58C8A;
+	border-radius: .4em;
+	width:200px;
+}
+
+.postOther{
+	margin: 10px;
+
+	position: relative;
+	background: grey;
+	border-radius: .4em;
+	width:200px;
+}
+
+
+
+		
