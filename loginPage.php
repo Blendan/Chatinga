@@ -5,6 +5,8 @@ session_start();
 <html lang="en">
 <head>
 <link rel="stylesheet" type="text/css" href="css/loginPage.css">
+<script src="js/jquery.js"></script>
+<script src="js/login.js"></script>
 	<meta charset="UTF-8">
 	<title>Chatinga - Einloggen</title>
 </head>
@@ -25,7 +27,6 @@ if(isset($_SESSION["Nutzername"]))
 			<button name='login' value='1' type="submit">Einloggen</button>
 		</fieldset>
 	</form>
-	<br><br>
 	<form id="registerForm" action="loginScript.php" method="post">
 		<fieldset>
 			<legend>Registrieren</legend>
@@ -34,5 +35,6 @@ if(isset($_SESSION["Nutzername"]))
 			<button name='register' value='1' type="submit">Registrieren</button>
 		</fieldset>
 	</form>
+	<button type="button" name="button" id="toggelType">Regestriren</button>
 </body>
 </html>

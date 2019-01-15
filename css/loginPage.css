@@ -14,10 +14,15 @@
 	font-weight: Bold;
 	color:white;
 	font-size: 25px;
+  display: none;
+}
+
+#toggelType {
+  margin-top: 60px;
 }
 
 body {
-font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   position: relative;
   z-index: 1;
   background-image: url(https://images.pexels.com/photos/1146642/pexels-photo-1146642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
@@ -26,7 +31,9 @@ font-family: "Roboto", sans-serif;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  transform: rotateX(0deg);
 }
+
 input {
   font-family: "Roboto", sans-serif;
   outline: 0;
@@ -79,4 +86,3 @@ button {
 button:hover,button:active,button:focus {
   background: #B57473;
 }
-
