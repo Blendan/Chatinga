@@ -74,7 +74,7 @@
 
      <div id="scroolTo"></div>
 
-     <iframe id="scannForNew" src="scannForNew.php?chatid=1" style="display: none;"></iframe>
+     <iframe id="scannForNew" src="scannForNew.php?chatid=<?php echo $_GET["chatid"]; ?>" style="display: none;"></iframe>
      <script language="javascript" type="text/javascript">
        location.href = "#scroolTo";
 
