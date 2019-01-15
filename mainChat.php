@@ -4,12 +4,15 @@
   <!DOCTYPE html>
   <html lang="de" dir="ltr">
     <head>
+<link rel="stylesheet" type="text/css" href="css/mainChat.css">
       <meta charset="utf-8">
       <title></title>
     </head>
     <body>
-      <iframe src="chat/chat.php?chatid=<?php echo $_GET["chatid"]; ?>" width="300px" height="300px"></iframe>
-      <iframe src="chat/postline.php?chatid=<?php echo $_GET["chatid"]; ?>" width="300px" height="300px"></iframe>
+	<div id="chatFenster">
+      <iframe class="chat" src="chat/chat.php?chatid=<?php echo $_GET["chatid"]; ?>" width="100%" height="85%"></iframe>
+      <iframe class="chatsenden" src="chat/postline.php?chatid=<?php echo $_GET["chatid"]; ?>" width="100%" height="15%" scrolling="no" style="float:right"></iframe>
+	  </div>
     </body>
   </html>
 <?php else: ?>
