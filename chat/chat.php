@@ -35,44 +35,60 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script language="javascript" type="text/javascript">
-      location.href = "#scroolTo";
+    <script src="../js/jquery.js"></script>
 
-      window.setTimeout('window.location = "chat.php?chatid=<?php echo $_GET["chatid"]; ?>"',1000);
-    </script>
   </head>
   <body>
-    <?php if (isset($_GET["scroll"])): ?>
-      <?php echo $_GET["scroll"]; ?>
-    <?php endif; ?>
-    <?php
-      foreach (auslesen($pdo) as $key => $value)
-      {
-        // überprüft ob der Post vom angemeldeten nutzer kommt oder nicht und weist passende klasse für CSS zu
-        if($value->getVerfasser()==$_SESSION["NutzerID"])
-        {
-          echo "<div class='post own'>";
-        }
-        else
-        {
-          echo "<div class='post other'>";
-        }
-        // gibt die eingentliche Nachricht aus
-        echo "<p class='user'>";
-        echo $value->getVerfasserName();
-        echo "</p>";
-        echo "<p class='timestamp'>";
-        echo $value->getZeitpunkt();
-        echo "</p>";
-        echo "<p class='mesage'>";
-        echo $value->getNachricht();
-        echo "</p>";
-        echo "</div>";
+    <div id="mesages">
 
-        $last = $value->getNachrichtID();
-      }
-     ?>
+      <?php
+        foreach (auslesen($pdo) as $key => $value)
+        {
+          // überprüft ob der Post vom angemeldeten nutzer kommt oder nicht und weist passende klasse für CSS zu
+          if($value->getVerfasser()==$_SESSION["NutzerID"])
+          {
+            echo "<div class='post own'>";
+          }
+          else
+          {
+            echo "<div class='post other'>";
+          }
+          // gibt die eingentliche Nachricht aus
+          echo "<p class='user'>";
+          echo $value->getVerfasserName();
+          echo "</p>";
+          echo "<p class='timestamp'>";
+          echo $value->getZeitpunkt();
+          echo "</p>";
+          echo "<p class='mesage'>";
+          echo $value->getNachricht();
+          echo "</p>";
+          echo "</div>";
+
+          $last = $value->getNachrichtID();
+        }
+       ?>
+
+    </div>
+
      <div id="scroolTo"></div>
 
+     <iframe id="scannForNew" src="scannForNew.php?chatid=1" style="display: none;"></iframe>
+     <script language="javascript" type="text/javascript">
+       location.href = "#scroolTo";
+
+       var last = <?php echo $last ?>+"";
+
+       window.setInterval('checkForNew();',1000);
+
+       function checkForNew()
+       {
+         if(document.getElementById('scannForNew').contentWindow.getID()!=last)
+         {
+           $("#mesages").append(document.getElementById('scannForNew').contentWindow.getMesage());
+           last = document.getElementById('scannForNew').contentWindow.getID();
+         }
+       }
+     </script>
   </body>
 </html>
