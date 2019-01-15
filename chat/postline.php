@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
   <head>
+ <link rel="stylesheet" type="text/css" href="../css/postline.css">
     <meta charset="utf-8">
     <title></title>
   </head>
