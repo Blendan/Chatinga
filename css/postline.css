@@ -3,7 +3,7 @@ body{
 background-color:white;
 	font-family: "Roboto", sans-serif;
 	text-align:left;
-	font-size: 16px;
+	font-size: 16	px;
 	color: white;	
 	height:100%;
 	width:100%;
@@ -11,8 +11,8 @@ background-color:white;
 	
 textarea  {
 	background-color:white;
-	font-size:30px;
-	width:75%;
+	font-size:14px;
+	width:86%;
 	height:60vh;
 	margin: 5px;
 	padding: 5px;
@@ -25,11 +25,15 @@ button {
   border: 0;
   padding: 15px;
   margin:15px;
-  top:100px;
+  margin-top:6px;
+  float:right;
+  float:top;
   color: #FFFFFF;
   font-size: 14px;
   cursor: pointer;
-}
+  height: 71px;
+  width: 110px;
+  }
 
 button:hover,button:active,button:focus {
   background: #B57473;
