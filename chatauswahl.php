@@ -17,6 +17,7 @@ else
   <!DOCTYPE html>
   <html lang="de" dir="ltr">
     <head>
+	<link rel="stylesheet" type="text/css" href="css/chatauswahl.css">
       <meta charset="utf-8">
       <title>Chatauswahl</title>
     </head>
@@ -25,8 +26,7 @@ else
 			<h1>Wähle einen Chatraum aus</h1>
 			<?php foreach ($rows as $key => $value): ?>
 				<a href="mainChat.php?chatid=<?= $value['ChatraumID'] ?>">
-					<span class="name"><?=$value['Name'] ?></span> - 
-					<span class="thema"><?=$value['Thema'] ?></span>
+					<div class="name"><?=$value['Name'] ?><div class="thema"><?=$value['Thema'] ?></div></div>
 				</a>
 			<?php endforeach; ?>
 		</div>
