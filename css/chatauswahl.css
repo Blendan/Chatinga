@@ -2,29 +2,44 @@
 body{
 	background-image: url(https://images.pexels.com/photos/1146642/pexels-photo-1146642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
 	font-family: "Roboto", sans-serif;
-	font-size: 30px;
+	font-size: 18px;
 	color: white;	
 	width: 50vw;
-	margin: 5% auto 100px;
+	margin: auto;
 	max-width: auto;
-	padding: 45px;
-	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+	
+	
 	}
 	
 	a {
-		text-decoration:none;
+		text-decoration:none;		
+	}
+	
+	#logout {
+		float:right;
+		float:top;
+		background-color:white;
 	}
 	
 	
 	.name{
 		
-		color:Grey;
-		font-size:30px;
-		text-align:left;
-	}
-
-	.name .thema {
 		color:white;
+		font-size:30px;
+		font-weight:Bold;
+		text-align:center;
+		text-align:middle;
+		background-color:#E58C8A;
+		height:20vh;
+		line-height:20vh;
+		margin:15px;
+		padding:15px;
+		width:auto;
+		
+	}
+	
+	/*color:white;
 		font-size:30px;
 		transition-duration: 0.5s;
 		opacity: 0;
@@ -33,22 +48,100 @@ body{
 		left: 30vw;
 		top: 33vh;
 		display: none;
-		background: rgba(255, 255, 255, 0.1);
+		background: rgba(255, 255, 255, 0.1);*/
+.thema {
+
+  position: absolute;
+  display:block;
+  left:27vw;
+  height: 20vh;
+  width: 44vw;
+  opacity: 0;
+  transition: .9s ease;
+  background-color: #E58C8A;
+  font-size:10px;
+  margin:15px;
+padding:15px;
+  
+  	
 	}
 
-
+ /* display: block;*/
 .name:hover .thema {
   opacity: 1;
-  display: block;
+  position: absolute;
+  display:block;
+  top: 0;
+  bottom: 0;
+  transition: .9s ease;
+  background-color: #E58C8A;
+ 
+
 }
 
-h1 {
-	background: rgba(225,225,225,0.5);
+.anlegen {
+	background: rgba(255,255,255,0.5);
 	width:50vw;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-	margin:10px;
-	padding:20px;
+	margin:15px;
+	padding:15px;
 	text-align:center;	
+	font-size:18px;
+	 
+
+	
 }
 	
+.chatauswahl {
+box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+background: rgba(255,255,255,0.4);
+margin:15px;
+padding:15px;
+width:50vw;
+	text-align:center;
+
+}
+
+fieldset {
+	border:0;
+
 	
+}
+
+input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-weight:bold;
+}
+
+textarea {
+	font-family: "Roboto", sans-serif;
+	outline: 0;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+	resize:none;
+}
+
+button {
+margin-top:15px;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #E58C8A;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  cursor: pointer;
+}

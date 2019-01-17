@@ -62,11 +62,11 @@
           echo "<p class='user'>";
           echo $value->getVerfasserName();
           echo "</p>";
-          echo "<p class='timestamp'>";
-          echo $value->getZeitpunkt();
-          echo "</p>";
           echo "<p class='message'>";
           echo $Parsedown->text($value->getNachricht());
+          echo "</p>";
+		   echo "<p class='timestamp'>";
+          echo $value->getZeitpunkt();
           echo "</p>";
           echo "</div>";
 

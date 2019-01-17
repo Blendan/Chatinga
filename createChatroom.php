@@ -1,8 +1,6 @@
 <?php
 session_start();
-
 include "include.php\createChatroomFunctions.inc.php";
-
 if(!isset($_SESSION["Nutzername"])) //Nutzer ist nicht eingeloggt
 {
 	header("Location: index.php");
@@ -32,5 +30,4 @@ else //Seite wurde manuell aufgerufen
 {
 	header("Location: index.php");
 }
-
 ?>

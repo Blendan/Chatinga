@@ -3,21 +3,40 @@ body{
 background-color:white;
 	font-family: "Roboto", sans-serif;
 	text-align:left;
-	font-size: 16px;
+		
 	}
 	
-.user{
-	color:green;
-	
+/*custom scrollbar*/
+::-webkit-scrollbar {
+    width: 10px;
+    height: 1px;
+}
+::-webkit-scrollbar-button {
+    background: #ccc
+}
+::-webkit-scrollbar-track-piece {
+    background: #888
+}
+::-webkit-scrollbar-thumb {
+    background: #E58C8A
+}​
 
+.postOwn .user{
+	color:white;
+	text-align:left;
+	font-family: "Roboto", sans-serif;
+	font-weight:bold;
+	font-size:40px;
 }
 
 .timestamp {
 	color:white;
 	font-size: 10px;
-	text-align:left;
+	text-align:right;
 	float:bottom;
-	float:right;	 
+	float:right;	
+	margin:2px;	
+	font-family: "Roboto", sans-serif;
 }
 
 .message {
@@ -28,20 +47,17 @@ background-color:white;
 	text-align:left;
 }
 
-.user {
-	
-	text-align:left;
-}
-
 .postOwn{
-margin: 15px;
+	margin: 15px;
 	padding: 15px;
-	left: 83%;
+	left: 65%;
 	position: relative;
 	background: #E58C8A;
 	border-radius: 3px;
-	width:200px;
-	text-align:right;
+	width:30%;
+	text-align:left;
+	word-break: break-all;
+	font-family: "Roboto", sans-serif;
 }
 
 .postOther{
@@ -50,8 +66,11 @@ margin: 15px;
 	position: relative;
 	background: lightgrey;
 	border-radius: 3px;
-	width:200px;
+	width:30%;
 	text-align:left;
+	word-break: break-all;
+	font-family: "Roboto", sans-serif;
+	
 }
 
 

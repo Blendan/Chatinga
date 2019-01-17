@@ -8,7 +8,7 @@ $(document).ready(
         $("#loginForm").toggle(500);
         if($("#toggelType").text()=="Login")
         {
-          $("#toggelType").text("Regestriren");
+          $("#toggelType").text("Registrieren");
         }
         else
         {

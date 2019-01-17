@@ -35,6 +35,6 @@ if(isset($_SESSION["Nutzername"]))
 			<button name='register' value='1' type="submit">Registrieren</button>
 		</fieldset>
 	</form>
-	<button type="button" name="button" id="toggelType">Regestriren</button>
+	<button type="button" name="button" id="toggelType">Registrieren</button>
 </body>
 </html>

@@ -11,7 +11,7 @@
     <body>
 	<div id="chatFenster">
       <iframe class="chat" src="chat/chat.php?chatid=<?php echo $_GET["chatid"]; ?>" width="100%" height="85%"></iframe>
-      <iframe class="chatsenden" src="chat/postline.php?chatid=<?php echo $_GET["chatid"]; ?>" width="100%" height="15%" scrolling="no" style="float:right"></iframe>
+      <iframe class="chatsenden" src="chat/postline.php?chatid=<?php echo $_GET["chatid"]; ?>" width="100%" height="20%" scrolling="no" style="float:right"></iframe>
 	  </div>
     </body>
   </html>

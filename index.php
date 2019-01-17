@@ -14,9 +14,11 @@ session_start();
 <?php
 if(isset($_SESSION["Nutzername"]))
 {
+	echo "<div id=auswahl>";
 	echo "Du bist angemeldet als " . $_SESSION["Nutzername"] . "<br>";
 	echo "<a href='logoutScript.php'>Ausloggen</a><br>";
 	echo "<a href='chatauswahl.php'>Zur Chatauswahl</a><br>";
+	echo "</div>";
 }
 else
 {
