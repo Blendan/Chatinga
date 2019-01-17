@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if(!isset($_SESSION["Nutzername"]))
+if(!isset($_SESSION["Nutzername"])) //Nutzer ist nicht eingeloggt
 {
 	header("Location: index.php");
 }
@@ -32,11 +32,11 @@ else
 		</div>
 		<div class="anlegen">
 			<h1>Lege einen neuen Chatraum an</h1>
-			<form id="anlegen" action="chatraumAnlegen.php">
+			<form id="anlegen" method="post" action="createChatroom.php">
 				<fieldset>
-					<label>Name <input type="text" name="Name"></label>
-					<label>Thema <textarea name="Thema" cols="50" rows="2"></textarea>
-					<button type="submit">Anlegen</button>
+					<label>Name <input type="text" name="name"></label>
+					<label>Thema <textarea name="thema" cols="50" rows="2"></textarea>
+					<button name="createChatroom" value="1" type="submit">Anlegen</button>
 				</fieldset>
 			</form>
 		</div>
