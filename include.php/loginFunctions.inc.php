@@ -38,3 +38,15 @@ function setOffline($username, $pdo)
 {
 	$pdo->prepare("Update Nutzer SET istOnline = 0 WHERE Nutzername = ?")->execute([$username]);
 }
+
+function createUser($username, $password, $pdo)
+{
+	$passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+	$statement = $pdo->prepare
+	("
+		INSERT INTO nutzer (Nutzername, Passwort)
+		VALUES (?, ?);
+	");
+	$statement->execute([$username, $passwordHash]);
+}
