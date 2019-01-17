@@ -32,6 +32,13 @@ if(isset($_POST['login']))	//Seite wurde vom login-formular aufgerufen
 
 		if(password_verify($_POST["password"], $dbPassword))
 		{
+			//vorher angemeldeten Nutzer auf offline setzen
+			if(isset($_SESSION["Nutzername"]))
+			{
+				setOffline($_SESSION["Nutzername"], $pdo);
+				session_unset();
+			}
+
 			//Session Variable füllen
 			$dbUser = retrieveUser($_POST["username"], $pdo);
 
@@ -62,24 +69,12 @@ if(isset($_POST['login']))	//Seite wurde vom login-formular aufgerufen
 }
 elseif(isset($_POST['register'])) //Seite wurde vom Registrier-formular aufgerufen
 {
-	$pdo = new PDO("mysql:host=localhost;dbname=Chatinga;charset=utf8", "root", "");
-
-	if(userExists($_POST["username"], $pdo))
-	{
-		header("Refresh:2; url=loginPage.php");
-		echo "Ein User mit diesem Namen existiert bereits.";
-	}
-	elseif($_POST["username"] == "" || $_POST["password"] == "")
-	{
-		header("Refresh:2; url=loginPage.php");
-		echo "Bitte einen Nutzernamen und ein Passwort eingeben.";
-	}
-	else
-	{
-		createUser($_POST["username"], $_POST["password"], $pdo);
-		header("Refresh:2; url=loginPage.php");
-		echo "Registrieren erfolgeich! Du wirst gleich weitergeleitet.";
-	}
+	//TODO
+	//checke, dass nutzername nicht schon vorhanden
+	//schreibe neue Daten
+	
+	header("Refresh:2; url=loginPage.php");
+	echo "Registrieren funktioniert noch nicht.";
 }
 else //Seite wurde anderweitig (manuell) aufgerufen
 {
