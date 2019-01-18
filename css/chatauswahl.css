@@ -24,7 +24,7 @@ body{
 	
 	
 	.name{
-		
+		position: relative;
 		color:white;
 		font-size:30px;
 		font-weight:Bold;
@@ -50,33 +50,25 @@ body{
 		display: none;
 		background: rgba(255, 255, 255, 0.1);*/
 .thema {
-
   position: absolute;
-  display:block;
-  left:27vw;
-  height: 20vh;
-  width: 44vw;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  display:none;
+  height: 100%;
+  width: 100%;
   opacity: 0;
   transition: .9s ease;
   background-color: #E58C8A;
   font-size:10px;
-  margin:15px;
-padding:15px;
-  
-  	
-	}
+}
 
  /* display: block;*/
 .name:hover .thema {
   opacity: 1;
-  position: absolute;
-  display:block;
-  top: 0;
-  bottom: 0;
-  transition: .9s ease;
+  display: block;
   background-color: #E58C8A;
- 
-
 }
 
 .anlegen {
