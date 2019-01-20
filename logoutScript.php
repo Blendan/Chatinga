@@ -6,6 +6,7 @@ include "include.php\loginFunctions.inc.php";
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" type="text/css" href="css/logoutScript.css">
 	<meta charset="UTF-8">
 	<title>Chatinga - Einloggen</title>
 </head>
