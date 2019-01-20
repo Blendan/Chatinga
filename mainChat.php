@@ -7,6 +7,8 @@
 <link rel="stylesheet" type="text/css" href="css/mainChat.css">
       <meta charset="utf-8">
       <title></title>
+	  <a id="logout" href='logoutScript.php'>Ausloggen</a>
+	  <a id="chatauswahl" href='chatauswahl.php'>Zur Chatauswahl</a>
     </head>
     <body>
 	<div id="chatFenster">
