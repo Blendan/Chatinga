@@ -93,11 +93,10 @@
            $("#messages").scroll(
              function()
              {
-               if(scrollLast<$("#messages").scrollTop())
+               if(scrollLast>$("#messages").scrollTop())
                {
                 autoToNew = false; // wenn man selbst scrollt soll man nicht bei jenden neuladen weider ans ende geworfen werden
                 $("#aktScrollToNew").show();
-                scrollLast = $("#messages").scrollTop();
               }
              }
            );
@@ -108,6 +107,7 @@
                 autoToNew = true; // reaktiwirt das scrollen wieder
                 location.href = "#scroolTo";
                 $("#aktScrollToNew").hide();
+                scrollLast = $("#messages").scrollTop();
              }
            );
          }
@@ -120,6 +120,7 @@
            if(autoToNew)
            {
              location.href = "#scroolTo";
+             scrollLast = $("#messages").scrollTop();
            }
        }
      </script>

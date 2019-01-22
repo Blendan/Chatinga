@@ -3,15 +3,24 @@ body{
 		background-image: url(https://images.pexels.com/photos/1146642/pexels-photo-1146642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
 		font-family: "Roboto", sans-serif;
 }
-	
+
 p {
 		font-size:16px;
 		font-family: "Roboto", sans-serif;
 }
 
 #chatFenster {
-		width: 63vw;
+		width: 60vw;
 		height: 70vh;
+		margin-left: 15vw;
+		margin-top: 20px;
+		padding: 0;
+}
+
+iframe {
+	border: 2px black solid;
+	margin: 0;
+	padding: 0;
 }
 
 a {
@@ -27,7 +36,7 @@ a {
 		line-height:5vh;
 		width:auto;
 }
-	
+
 a:hover,a:active,a:focus {
 		background: #B57473;
 }

@@ -24,16 +24,6 @@ body{
     background: #E58C8A;
 }​
 
-.timestamp {
-	color:white;
-	font-size: 10px;
-	text-align:right;
-	float:bottom;
-	float:right;
-	margin:2px;
-	font-family: "Roboto", sans-serif;
-}
-
 .message {
 	font-size:16px;
 	font-family: "Roboto", sans-serif;
@@ -44,11 +34,11 @@ body{
 .postOwn{
 	margin: 15px;
 	padding: 15px;
-	left: 65%;
+	left: 30%;
 	position: relative;
 	background: #E58C8A;
 	border-radius: 3px;
-	width:30%;
+	width:65%;
 	text-align:left;
 	word-break: break-all;
 	font-family: "Roboto", sans-serif;
@@ -60,7 +50,7 @@ body{
 	position: relative;
 	background: lightgrey;
 	border-radius: 3px;
-	width:30%;
+	width:65%;
 	text-align:left;
 	word-break: break-all;
 	font-family: "Roboto", sans-serif;
@@ -106,4 +96,12 @@ body{
 	font-size: 20px;
 	bottom: 5px;
 	right: 5px;
+}
+
+.timestamp {
+	color:white;
+	font-size: 15px;
+	text-align:right;
+	margin:2px;
+	font-family: "Roboto", sans-serif;
 }
