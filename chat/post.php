@@ -19,7 +19,7 @@
       $this->Chatraum = $row["Chatraum"];
     }
 
-    public function addMesage()
+    public function addMesage() // schreibt eine Nachricht in dei DB
     {
       $server ="mysql:dbname=chatinga;host=localhost";
       $user="root";
@@ -62,7 +62,7 @@
       return $this->Verfasser;
     }
 
-    public function getVerfasserName()
+    public function getVerfasserName() //gibt den nemane des verfassers zurück
     {
       $server ="mysql:dbname=chatinga;host=localhost";
       $user="root";

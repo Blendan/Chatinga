@@ -14,7 +14,7 @@
 
     echo $nachricht->addMesage();
 
-    //print_r($row);
+    print_r($row);
   }
   else
   {
