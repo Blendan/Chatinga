@@ -3,6 +3,7 @@
 <?php include "../include.php/parsedown-1.7.1/Parsedown.php" ?>
 
 <?php
+  //hir werden neue Posts geladen um dann im chat angezegt zu werden
   $server ="mysql:dbname=chatinga;host=localhost";
   $user="root";
   $password = "";
