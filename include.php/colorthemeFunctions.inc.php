@@ -20,3 +20,18 @@ function retrieveThemeName($themeID, $pdo)
 
 	return $row["Name"]; //string
 }
+
+function retrieveAllThemes($pdo)
+{
+	$result = $pdo->query("SELECT * FROM farbthema");
+
+	return $result;
+}
+
+function updateUserChosenTheme($userID, $themeID, $pdo)
+{
+	$statement = $pdo->prepare("UPDATE nutzer 
+		SET gewaehltesThema = ?
+		WHERE NutzerID = ?");
+	$statement->execute([$themeID, $userID]);
+}
