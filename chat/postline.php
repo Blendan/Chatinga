@@ -8,7 +8,7 @@
   <body>
     <form action="senden.php" method="post">
       <textarea name="Nachricht"></textarea>
-      <button type="submit" name="chatid" value="<?php echo $_GET["chatid"]; ?>"> &#11166 </button>
+      <button type="submit" name="chatid" value="<?php echo $_GET["chatid"]; ?>"> &#11166; </button> <!-- sendet die Posts -->
     </form>
   </body>
 </html>

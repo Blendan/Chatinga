@@ -9,7 +9,7 @@
   $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
   $pdo = new PDO($server,$user,$password,$options);
 
-  function auslesen($pdo)
+  function auslesen($pdo) //läd die posts und gibt den Post array zurück
   {
     $post = array();
 
