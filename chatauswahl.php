@@ -20,6 +20,7 @@ else
     </head>
     <body>
 	<a id="logout" href='logoutScript.php'>Ausloggen</a>
+	<a id="themeauswahl" href='chooseColorthemePage.php'>Themes</a>
 		<div class="chatauswahl">
 			<h1>Wähle einen Chatraum aus</h1>
 			<?php foreach ($rows as $key => $value): ?>

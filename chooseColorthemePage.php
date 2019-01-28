@@ -14,13 +14,13 @@ else
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" type="text/css" href="css/loginScript.css">
+<link rel="stylesheet" type="text/css" href="css/chooseColorthemepage.css">
 	<meta charset="UTF-8">
 	<title>Chatinga - Farbthema auswählen</title>
 </head>
 <body>
 <?php foreach($themes as $theme): ?>
-	<a href="chooseColorthemeScript.php?themeID=<?= $theme["FarbthemaID"] ?>"><?= $theme["Name"] ?></a>
+	<a href="chooseColorthemeScript.php?themeID=<?= $theme["FarbthemaID"] ?>"><?= $theme["Name"] ?></a> <br>
 <?php endforeach; ?>
 </body>
 </html>
