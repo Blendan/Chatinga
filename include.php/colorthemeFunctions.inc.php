@@ -30,6 +30,7 @@ function retrieveAllThemes($pdo)
 
 function updateUserChosenTheme($userID, $themeID, $pdo)
 {
+	$_SESSION["gewaehltesThema"] = $themeID;
 	$statement = $pdo->prepare("UPDATE nutzer 
 		SET gewaehltesThema = ?
 		WHERE NutzerID = ?");
