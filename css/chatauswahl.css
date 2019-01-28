@@ -15,11 +15,17 @@ a {
 }
 	
 	
-#logout:hover,#logout:active,#logout:focus {
+#logout:hover,#logout:active,#logout:focus  {
 		background: #B57473;
 }
-	
-#logout {
+
+#themeauswahl:hover,#themeauswahl:active,#themeauswahl:focus {
+	background: #B57473;
+}
+
+
+
+#logout, #themeauswahl {
 		color:white;
 		font-size:20px;
 		font-weight:Bold;
