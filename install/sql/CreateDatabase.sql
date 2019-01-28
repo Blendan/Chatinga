@@ -19,25 +19,12 @@ USE Chatinga;
 CREATE TABLE Farbthema (
     FarbthemaID SMALLINT NOT NULL AUTO_INCREMENT,
     Name VARCHAR(30) NOT NULL,
-    ChatfensterTextfarbe VARCHAR(20) NOT NULL,
-    ChatfensterRahmenfarbe VARCHAR(20) NOT NULL,
-    ChatfensterHintergrundfarbe VARCHAR(20) NOT NULL,
-    ChatfensterHintergrundbild VARCHAR(301) NULL,
-    OnlinelisteTextfarbe VARCHAR(20) NOT NULL,
-    OnlinelisteRahmenfarbe VARCHAR(20) NOT NULL,
-    OnlinelisteHintergrundfarbe VARCHAR(20) NOT NULL,
-    OnlinelisteHintergrundbild VARCHAR(300) NULL,
-    TextfeldTextfarbe VARCHAR(20) NOT NULL,
-    TextfeldRahmenfarbe VARCHAR(20) NOT NULL,
-    TextfeldHintergrundfarbe VARCHAR(20) NOT NULL,
-    TextfeldHintergrundbild VARCHAR(300) NULL,
-    -- Erweiterung und Änderungen auf Anfrage des Designers
+    Dateiname VARCHAR(30) NOT NULL,
 
     CONSTRAINT Farbthema_PK PRIMARY KEY (FarbthemaID),
-    CONSTRAINT Farbthema_Name_UNQ UNIQUE (Name)
+    CONSTRAINT Farbthema_Name_UNQ UNIQUE (Name),
+    CONSTRAINT Farbthema_Dateiname_UNQ UNIQUE (Name)
 );
--- Farben in Hexadzimalschreibweise #27bf45 oder html-Farbnamen. Größe gewählt, da der längste html-Farbname 20 Zeichen lang ist
--- Bilder sind Dateipfade oder Gradients, können null enthalten
 -- Farbthema mit der ID 1 ist das Standardfarbthema
 
 CREATE TABLE Nutzer (
@@ -74,7 +61,7 @@ CREATE TABLE Chatraum (
 	CONSTRAINT Chatraum_Name_UNQ UNIQUE (Name)
 );
 
-INSERT INTO `chatraum` (`Name`, `Thema`) VALUES ('General', 'Raum für Alles was das Herz begehrt.'), ('Ü20', 'Nur (halbwegs) Erwachsene erlaubt!');
+INSERT INTO `chatraum` (`Name`, `Thema`) VALUES ('General', 'Raum für Alles was das Herz begehrt.'), ('Ü20', 'Nur (halbwegs) Erwachsene erlaubt!'), ('Musik', 'Erzähl uns von deiner Lieblingsmukke'), ('Computer und co.', 'Krieger der virtuellen Welt, versammelt euch!');
 
 CREATE TABLE Nachricht (
 	NachrichtID INT NOT NULL AUTO_INCREMENT,
