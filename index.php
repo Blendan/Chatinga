@@ -6,8 +6,8 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<title>Chatinga - Einloggen</title>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-</head>
+  	<link rel="stylesheet" type="text/css" href="css/index.css">
+	</head>
 <body>
 	<h1>Herzlich Willkommen bei Chatinga!</h1>
 

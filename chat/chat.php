@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php include "../include.php/colorthemeFunctions.inc.php"; ?>
 <?php include "post.php";  ?>
 <?php include "../include.php/parsedown-1.7.1/Parsedown.php" ?>
 
@@ -34,9 +35,9 @@
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
   <head>
+  	<link rel="stylesheet" type="text/css" href="../css/<?= retrieveThemeFilename($_SESSION["gewaehltesThema"], $pdo)?>/chat.css">
     <meta charset="utf-8">
     <title></title>
-	<link rel="stylesheet" type="text/css" href="../css/chat.css">
     <script src="../js/jquery.js"></script>
 
   </head>

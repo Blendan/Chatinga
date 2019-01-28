@@ -1,5 +1,6 @@
 <?php 
 session_start();
+include "include.php/colorthemeFunctions.inc.php";
 if(!isset($_SESSION["Nutzername"])) //Nutzer ist nicht eingeloggt
 {
 	header("Location: index.php");
@@ -14,7 +15,8 @@ else
   <!DOCTYPE html>
   <html lang="de" dir="ltr">
     <head>
-	<link rel="stylesheet" type="text/css" href="css/chatauswahl.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/<?= retrieveThemeFilename($_SESSION["gewaehltesThema"], $pdo)?>/chatauswahl.css">
       <meta charset="utf-8">
       <title>Chatauswahl</title>
     </head>

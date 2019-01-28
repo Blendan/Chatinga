@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+body{
+		background-image: url(https://images.pexels.com/photos/1146642/pexels-photo-1146642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+		font-family: "Roboto", sans-serif;
+}
+
+p {
+		font-size:16px;
+		font-family: "Roboto", sans-serif;
+}
+
+#chatFenster {
+		width: 60vw;
+		height: 70vh;
+		margin-left: 15vw;
+		margin-top: 20px;
+		padding: 0;
+}
+
+iframe {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+		text-decoration:none;
+		color:white;
+		font-size:20px;
+		font-weight:Bold;
+		text-align:center;
+		background-color:#E58C8A;
+		height:20px;
+		margin:0px;
+		padding:8px;
+		line-height:5vh;
+		width:auto;
+}
+
+a:hover,a:active,a:focus {
+		background: #B57473;
+}

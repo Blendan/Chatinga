@@ -1,0 +1,140 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+body {
+		background-image: url(https://images.pexels.com/photos/1146642/pexels-photo-1146642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+		background-position:fixed;
+		font-family: "Roboto", sans-serif;
+		font-size: 18px;
+		color: white;	
+		width: 50vw;
+		margin: auto;
+		max-width: auto;
+}
+	
+a {
+		text-decoration:none;		
+}
+	
+	
+#logout:hover,#logout:active,#logout:focus  {
+		background: #B57473;
+}
+
+#themeauswahl:hover,#themeauswahl:active,#themeauswahl:focus {
+	background: #B57473;
+}
+
+
+
+#logout, #themeauswahl {
+		color:white;
+		font-size:20px;
+		font-weight:Bold;
+		text-align:center;
+		background-color:#E58C8A;
+		height:20px;
+		margin:15px;
+		padding:8px;
+		line-height:2;
+		width:auto;
+		text-decoration:none;
+}
+	
+	
+.name {
+		position: relative;
+		color:white;
+		font-size:30px;
+		font-weight:Bold;
+		text-align:center;
+		text-align:middle;
+		background-color:#E58C8A;
+		height:12vh;
+		line-height:12vh;
+		margin:15px;
+		padding:15px;
+		width:auto;
+}
+	
+.thema {
+		position: absolute;
+		left: 0;
+		top: 0;
+		margin: 0;
+		padding: 0;
+		display:none;
+		height: 100%;
+		width: 100%;
+		line-height:15vh;
+		opacity: 0;
+		transition: .9s ease;
+		background-color: #E58C8A;
+		font-size:14px;
+}
+
+
+.name:hover .thema {
+		opacity: 1;
+		display: block;
+		background-color: #E58C8A;
+}
+
+.anlegen {
+		background: rgba(255,255,255,0.5);
+		width:50vw;
+		box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+		margin:15px;
+		padding:15px;
+		text-align:center;	
+		font-size:18px;	
+}
+	
+.chatauswahl {
+		box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+		background: rgba(255,255,255,0.4);
+		margin:15px;
+		padding:15px;
+		width:50vw;
+		text-align:center;
+}
+
+fieldset {
+		border:0;
+}
+
+input {
+		font-family: "Roboto", sans-serif;
+		outline: 0;
+		width: 100%;
+		border: 0;
+		margin: 0 0 15px;
+		padding: 15px;
+		box-sizing: border-box;
+		font-size: 20px;
+		font-weight:bold;
+}
+
+textarea {
+		font-family: "Roboto", sans-serif;
+		outline: 0;
+		width: 100%;
+		border: 0;
+		margin: 0 0 15px;
+		padding: 15px;
+		box-sizing: border-box;
+		font-size: 14px;
+		resize:none;
+}
+
+button {
+		margin-top:15px;
+		font-family: "Roboto", sans-serif;
+		text-transform: uppercase;
+		outline: 0;
+		background: #E58C8A;
+		width: 100%;
+		border: 0;
+		padding: 15px;
+		color: #FFFFFF;
+		font-size: 14px;
+		cursor: pointer;
+}
