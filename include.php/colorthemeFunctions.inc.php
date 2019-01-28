@@ -6,10 +6,8 @@ function retrieveThemeFilename($themeID, $pdo)
 		WHERE FarbthemaID = ?");
 	$result = $statement->execute([$themeID]);
 	$row=$statement->fetch(PDO::FETCH_ASSOC);
-
 	return $row["Dateiname"]; //string
 }
-
 function retrieveThemeName($themeID, $pdo)
 {
 	$statement = $pdo->prepare("SELECT Name
@@ -17,17 +15,13 @@ function retrieveThemeName($themeID, $pdo)
 		WHERE FarbthemaID = ?");
 	$result = $statement->execute([$themeID]);
 	$row=$statement->fetch(PDO::FETCH_ASSOC);
-
 	return $row["Name"]; //string
 }
-
 function retrieveAllThemes($pdo)
 {
 	$result = $pdo->query("SELECT * FROM farbthema");
-
 	return $result;
 }
-
 function updateUserChosenTheme($userID, $themeID, $pdo)
 {
 	$_SESSION["gewaehltesThema"] = $themeID;
