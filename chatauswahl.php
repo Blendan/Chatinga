@@ -15,14 +15,17 @@ else
   <!DOCTYPE html>
   <html lang="de" dir="ltr">
     <head>
-	
+	<link rel="stylesheet" type="text/css" href="css/<?= retrieveThemeFilename($_SESSION["gewaehltesThema"], $pdo)?>/master.css">
 	<link rel="stylesheet" type="text/css" href="css/<?= retrieveThemeFilename($_SESSION["gewaehltesThema"], $pdo)?>/chatauswahl.css">
+	
       <meta charset="utf-8">
       <title>Chatauswahl</title>
+	  <background></background>
     </head>
+	
     <body>
-	<a id="logout" href='logoutScript.php'>Ausloggen</a>
-	<a id="themeauswahl" href='chooseColorthemePage.php'>Themes</a>
+	<a id="logout" class="button" href='logoutScript.php'>Ausloggen</a>
+	<a id="themeauswahl" class="button" href='chooseColorthemePage.php'>Themes</a>
 		<div class="chatauswahl">
 			<h1>Wähle einen Chatraum aus</h1>
 			<?php foreach ($rows as $key => $value): ?>
