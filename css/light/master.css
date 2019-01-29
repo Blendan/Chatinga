@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+background {
+	background-image: url(https://images.pexels.com/photos/1146642/pexels-photo-1146642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+	background-size: cover;
+	background-position:fixed;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+iframe {
+	border: none;
+}
+
+body {
+		font-family: "Roboto", sans-serif;
+		font-size: 18px;
+		color: white;
+		z-index: 1;
+}
+
+.button {
+	color:white;
+	font-size:20px;
+	font-weight:Bold;
+	text-align:center;
+	background-color:#E58C8A;
+	height:20px;
+	margin:15px;
+	padding:8px;
+	line-height:2;
+	width:auto;
+	text-decoration:none;
+}
+
+.button:hover, .button:focus, .button:active{
+	background: #B57473;
+}

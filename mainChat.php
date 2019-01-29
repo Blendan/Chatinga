@@ -8,9 +8,11 @@ $pdo = new PDO("mysql:host=localhost;dbname=Chatinga;charset=utf8", "root", "");
   <html lang="de" dir="ltr">
     <head>
 <link rel="stylesheet" type="text/css" href="css/<?= retrieveThemeFilename($_SESSION["gewaehltesThema"], $pdo)?>/mainChat.css">
+<link rel="stylesheet" type="text/css" href="css/<?= retrieveThemeFilename($_SESSION["gewaehltesThema"], $pdo)?>/master.css">
       <meta charset="utf-8">
       <title></title>
     </head>
+	<background></background>
     <body>
     	<div id="chatFenster">
           <a id="logout" href='logoutScript.php'>Ausloggen</a>
