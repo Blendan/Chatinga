@@ -14,7 +14,7 @@ else
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" type="text/css" href="css/chooseColorthemepage.css">
+  	<link rel="stylesheet" type="text/css" href="css/<?= retrieveThemeFilename($_SESSION["gewaehltesThema"], $pdo)?>/chooseColorthemePage.css">
 	<meta charset="UTF-8">
 	<title>Chatinga - Farbthema auswählen</title>
 </head>

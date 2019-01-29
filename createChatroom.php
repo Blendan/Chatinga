@@ -31,3 +31,4 @@ else //Seite wurde manuell aufgerufen
 	header("Location: index.php");
 }
 ?>
+<link rel="stylesheet" type="text/css" href="css/createChatroom.css">

@@ -1,7 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 body {
-		background-image: url(https://images.pexels.com/photos/1146642/pexels-photo-1146642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+		background-image: url(https://images.pexels.com/photos/1083822/pexels-photo-1083822.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
 		background-position:fixed;
+		background-size:cover;
 		font-family: "Roboto", sans-serif;
 		font-size: 18px;
 		color: white;	
@@ -30,7 +31,7 @@ a {
 		font-size:20px;
 		font-weight:Bold;
 		text-align:center;
-		background-color:#E58C8A;
+		background-color:black;
 		height:20px;
 		margin:15px;
 		padding:8px;
@@ -47,7 +48,7 @@ a {
 		font-weight:Bold;
 		text-align:center;
 		text-align:middle;
-		background-color:#E58C8A;
+		background-color:black;
 		height:12vh;
 		line-height:12vh;
 		margin:15px;
@@ -67,15 +68,17 @@ a {
 		line-height:15vh;
 		opacity: 0;
 		transition: .9s ease;
-		background-color: #E58C8A;
+		background-color: #B57473;
 		font-size:14px;
+		color: black;
+		font-size: 16px;
 }
 
 
 .name:hover .thema {
 		opacity: 1;
 		display: block;
-		background-color: #E58C8A;
+		background-color: #B57473;
 }
 
 .anlegen {
@@ -86,6 +89,7 @@ a {
 		padding:15px;
 		text-align:center;	
 		font-size:18px;	
+
 }
 	
 .chatauswahl {
@@ -130,11 +134,15 @@ button {
 		font-family: "Roboto", sans-serif;
 		text-transform: uppercase;
 		outline: 0;
-		background: #E58C8A;
+		background: black;
 		width: 100%;
 		border: 0;
 		padding: 15px;
 		color: #FFFFFF;
 		font-size: 14px;
 		cursor: pointer;
+}
+
+button:hover,button:active,button:focus {
+		background: #0F0F0F;
 }

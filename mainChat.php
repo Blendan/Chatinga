@@ -1,13 +1,15 @@
-<?php session_start(); ?>
+<?php session_start(); 
+include "include.php/colorthemeFunctions.inc.php";
+$pdo = new PDO("mysql:host=localhost;dbname=Chatinga;charset=utf8", "root", "");
+?>
 
 <?php if (isset($_GET["chatid"])): ?>
   <!DOCTYPE html>
   <html lang="de" dir="ltr">
     <head>
-<link rel="stylesheet" type="text/css" href="css/mainChat.css">
+<link rel="stylesheet" type="text/css" href="css/<?= retrieveThemeFilename($_SESSION["gewaehltesThema"], $pdo)?>/mainChat.css">
       <meta charset="utf-8">
       <title></title>
-
     </head>
     <body>
     	<div id="chatFenster">
