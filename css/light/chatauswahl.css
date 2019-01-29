@@ -13,33 +13,7 @@ body {
 	
 a {
 		text-decoration:none;		
-}
-	
-	
-#logout:hover,#logout:active,#logout:focus  {
-		background: #B57473;
-}
-
-#themeauswahl:hover,#themeauswahl:active,#themeauswahl:focus {
-		background: #B57473;
-}
-
-
-
-#logout, #themeauswahl {
-		color:white;
-		font-size:20px;
-		font-weight:Bold;
-		text-align:center;
-		background-color:#E58C8A;
-		height:20px;
-		margin:15px;
-		padding:8px;
-		line-height:2;
-		width:auto;
-		text-decoration:none;
-}
-	
+}	
 	
 .name {
 		position: relative;

@@ -1,11 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 body {
-		background-image: url(https://images.pexels.com/photos/1083822/pexels-photo-1083822.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
-		background-position:fixed;
-		background-size:cover;
-		font-family: "Roboto", sans-serif;
-		font-size: 18px;
-		color: white;	
 		width: 50vw;
 		margin: auto;
 		max-width: auto;
@@ -14,32 +8,6 @@ body {
 a {
 		text-decoration:none;		
 }
-	
-	
-#logout:hover,#logout:active,#logout:focus  {
-		background: #B57473;
-}
-
-#themeauswahl:hover,#themeauswahl:active,#themeauswahl:focus {
-	background: #B57473;
-}
-
-
-
-#logout, #themeauswahl {
-		color:white;
-		font-size:20px;
-		font-weight:Bold;
-		text-align:center;
-		background-color:black;
-		height:20px;
-		margin:15px;
-		padding:8px;
-		line-height:2;
-		width:auto;
-		text-decoration:none;
-}
-	
 	
 .name {
 		position: relative;

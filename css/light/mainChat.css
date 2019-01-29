@@ -1,18 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
-body{
-		background-image: url(https://images.pexels.com/photos/1146642/pexels-photo-1146642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-		font-family: "Roboto", sans-serif;
-		background-position:fixed;
-		background-size:cover;
-}
-
 p {
 		font-size:16px;
 		font-family: "Roboto", sans-serif;
 }
 
 #chatFenster {
-		width: 60vw;
+		width: 70vw;
 		height: 70vh;
 		margin-left: 15vw;
 		margin-top: 20px;
